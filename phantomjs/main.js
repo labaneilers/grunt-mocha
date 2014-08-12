@@ -94,6 +94,10 @@ page.onResourceReceived = function(request) {
   }
 };
 
+page.onResourceError = function(resourceError) {
+    sendMessage('onResourceError', resourceError.url, resourceError.errorString);
+};
+
 page.onError = function(msg, trace) {
   sendMessage('error.onError', msg, trace);
 };
